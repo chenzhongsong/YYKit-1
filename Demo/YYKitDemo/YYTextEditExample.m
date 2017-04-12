@@ -129,10 +129,10 @@
     }];
     [toolbar addSubview:_exclusionSwitch];
     
-    
+    //键盘观察者
     [[YYTextKeyboardManager defaultManager] addObserver:self];
 }
-
+//取消键盘观察者
 - (void)dealloc {
     [[YYTextKeyboardManager defaultManager] removeObserver:self];
 }
@@ -195,7 +195,7 @@
 
 
 #pragma mark - keyboard
-
+//实现键盘事件的协议方法
 - (void)keyboardChangedWithTransition:(YYTextKeyboardTransition)transition {
     BOOL clipped = NO;
     if (_textView.isVerticalForm && transition.toVisible) {

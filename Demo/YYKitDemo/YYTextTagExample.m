@@ -88,7 +88,7 @@
     textView.selectedRange = NSMakeRange(text.length, 0);
     [self.view addSubview:textView];
     self.textView = textView;
-    
+    //dispatch_after的真正含义是在0.6秒后把任务添加进队列中，并不是表示在0.6秒后执行，大部分情况该函数能达到我们的预期，只有在对时间要求非常精准的情况下才可能会出现问题。
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [textView becomeFirstResponder];
     });

@@ -58,7 +58,7 @@
     
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"sjobs@apple.com, apple@apple.com, banana@banana.com, pear@pear.com "];
     text.font = [UIFont systemFontOfSize:17];
-    text.lineSpacing = 5;
+    text.lineSpacing = 5;//行间距
     text.color = [UIColor blackColor];
     
     YYTextView *textView = [YYTextView new];

@@ -38,7 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if ([self respondsToSelector:@selector( setAutomaticallyAdjustsScrollViewInsets:)]) {
-        self.automaticallyAdjustsScrollViewInsets = NO;//ios以上，不让有导航条的时候，视图自动往下压64
+        self.automaticallyAdjustsScrollViewInsets = NO;//ios7以上，不让有导航条的时候，视图自动往下压64
     }
     
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[WBStatusHelper imageNamed:@"toolbar_compose_highlighted"] style:UIBarButtonItemStylePlain target:self action:@selector(sendStatus)];

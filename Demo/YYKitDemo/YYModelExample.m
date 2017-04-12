@@ -146,13 +146,25 @@ static void ContainerObjectExample() {
     self.time = [NSDate dateWithTimeIntervalSince1970:timestamp / 1000.0];
     return YES;
 }
-- (void)modelCustomTransformToDictionary:(NSMutableDictionary *)dic {
+//原来是这样的 不是协议方法也调用 好诡异
+//- (void)modelCustomTransformToDictionary:(NSMutableDictionary *)dic {
+//    dic[@"t"] = @([self.time timeIntervalSince1970] * 1000).description;
+//}
+
+//测试使用的，原文用的是上面的方法，这个是我测试新加的
+- (BOOL)modelCustomTransformToDictionary:(NSMutableDictionary *)dic {
+    if (!self.time) {
+        return NO;
+    }
     dic[@"t"] = @([self.time timeIntervalSince1970] * 1000).description;
+    return YES;
 }
+
 @end
 
 static void CustomMapperExample() {
     YYMessage *message = [YYMessage modelWithJSON:@"{\"i\":\"2000000001\",\"c\":\"Hello\",\"t\":\"1437237598000\"}"];
+//    NSLog(@"message.messageId:%llu,message.content:%@,message.time:%@",message.messageId,message.content,message.time);
     NSString *messageJSON = [message modelToJSONString];
     NSLog(@"Book: %@", messageJSON);
 }

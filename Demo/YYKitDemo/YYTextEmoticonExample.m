@@ -30,10 +30,11 @@
     mapper[@":confused:"] = [self imageWithName:@"041"];
     mapper[@":cry:"] = [self imageWithName:@"010"];
     mapper[@":wink:"] = [self imageWithName:@"085"];
-    
+    // 内置简单的表情解析
     YYTextSimpleEmoticonParser *parser = [YYTextSimpleEmoticonParser new];
     parser.emoticonMapper = mapper;
-    
+    // 由于中文、英文、Emoji 等字体高度不一致，或者富文本中出现了不同字号的字体，
+    // 可能会造成每行文字的高度不一致。这里可以添加一个修改器来实现固定行高，或者自定义文本行位置。
     YYTextLinePositionSimpleModifier *mod = [YYTextLinePositionSimpleModifier new];
     mod.fixedLineHeight = 22;
     
