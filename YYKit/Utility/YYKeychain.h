@@ -14,10 +14,10 @@
 @class YYKeychainItem;
 
 NS_ASSUME_NONNULL_BEGIN
-
+//keychain,钥匙串       wrapper,包装纸;封套;封皮;（食品等的）包装材料
 /**
  A wrapper for system keychain API.
- 
+ 一个系统的钥匙链包装器API。灵感来自[SSKeychain]
  Inspired by [SSKeychain](https://github.com/soffes/sskeychain) 😜
  */
 @interface YYKeychain : NSObject

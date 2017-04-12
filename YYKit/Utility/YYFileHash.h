@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// File hash algorithm type
+/// File hash algorithm type//文件散列算法类型
 typedef NS_OPTIONS (NSUInteger, YYFileHashType) {
     YYFileHashTypeMD2     = 1 << 0, ///< MD2 hash
     YYFileHashTypeMD4     = 1 << 1, ///< MD4 hash
@@ -29,7 +29,8 @@ typedef NS_OPTIONS (NSUInteger, YYFileHashType) {
 
 /**
  Utility for computing hashes of file with high performance and low memory usage.
- See `YYFileHashType` for all supported hash (checksum) type.
+ //效用计算文件的哈希值用高性能和使用的低内存。
+ See `YYFileHashType` for all supported hash (checksum) type.//checksum,n. [计]检查和；校验和
  
  Sample Code:
  
@@ -40,10 +41,10 @@ typedef NS_OPTIONS (NSUInteger, YYFileHashType) {
 @interface YYFileHash : NSObject
 
 /**
- Start calculate file hash and return the result.
+ Start calculate file hash and return the result.//calculate,vt. & vi. 计算, 估计
  
  @discussion The calling thread is blocked until the asynchronous hash progress 
- finished.
+ finished.//调用线程被阻塞，直到异步哈希进程完成为止。
  
  @param filePath The path to the file to access.
  
@@ -63,12 +64,12 @@ typedef NS_OPTIONS (NSUInteger, YYFileHashType) {
  
  @param types    File hash algorithm types.
  
- @param block    A block which is called in progress. The block takes 3 arguments: 
-    `totalSize` is the total file size in bytes;
-    `processedSize` is the processed file size in bytes;
+ @param block    A block which is called in progress. The block takes 3 arguments: //一个在进程中被回调的block
+    `totalSize` is the total file size in bytes;//总文件大小以字节为单位
+    `processedSize` is the processed file size in bytes;//处理后的文件大小以字节为单位
     `stop` is a reference to a Boolean value, which can be set to YES to stop
  further processing. If the block stop the processing, it just returns nil.
- 
+ //一个布尔值的引用，可以设置为是的停止进一步的处理。如果块停止处理，它只返回零
  @return File hash result, or nil when an error occurs.
  */
 + (nullable YYFileHash *)hashForFile:(NSString *)filePath

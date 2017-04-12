@@ -17,19 +17,19 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- The YYAsyncLayer class is a subclass of CALayer used for render contents asynchronously.
+ The YYAsyncLayer class is a subclass of CALayer used for render contents asynchronously.//render,呈现
  
  @discussion When the layer need update it's contents, it will ask the delegate 
  for a async display task to render the contents in a background queue.
  */
 @interface YYAsyncLayer : CALayer
-/// Whether the render code is executed in background. Default is YES.
+/// Whether the render code is executed in background. Default is YES.//executed,执行
 @property BOOL displaysAsynchronously;
 @end
 
 
 /**
- The YYAsyncLayer's delegate protocol. The delegate of the YYAsyncLayer (typically a UIView)
+ The YYAsyncLayer's delegate protocol. The delegate of the YYAsyncLayer (typically a UIView)//通常是一个UIView
  must implements the method in this protocol.
  */
 @protocol YYAsyncLayerDelegate <NSObject>

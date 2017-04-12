@@ -30,7 +30,7 @@ typedef NS_ENUM(NSUInteger, YYGestureRecognizerState) {
 @property (nonatomic, readonly) CGPoint lastPoint; ///< last move point.
 @property (nonatomic, readonly) CGPoint currentPoint; ///< current move point.
 
-/// The action block invoked by every gesture event.
+/// The action block invoked by every gesture event. //invoked,v. 叫唤（invoke的过去式，过去分词）
 @property (nullable, nonatomic, copy) void (^action)(YYGestureRecognizer *gesture, YYGestureRecognizerState state);
 
 /// Cancel the gesture for current touch.

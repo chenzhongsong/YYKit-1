@@ -167,6 +167,7 @@
     
     _imageLinks = links;
     [self.tableView reloadData];
+    // 这个调用多此一举，本身就是delegate方法
     [self scrollViewDidScroll:self.tableView];
 }
 

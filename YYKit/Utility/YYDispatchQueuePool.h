@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  A dispatch queue pool holds multiple serial queues.
  Use this class to control queue's thread count (instead of concurrent queue).
+ 一个调度队列池拥有多个串行队列。
+ 使用这个类来控制队列的线程数（而不是并发队列）。
  */
 @interface YYDispatchQueuePool : NSObject
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;
@@ -28,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  Creates and returns a dispatch queue pool.
  @param name       The name of the pool.
  @param queueCount Maxmium queue count, should in range (1, 32).
- @param qos        Queue quality of service (QOS).
+ @param qos        Queue quality of service (QOS).//quality,n. 质量，品质；特性；才能
  @return A new pool, or nil if an error occurs.
  */
 - (instancetype)initWithName:(nullable NSString *)name queueCount:(NSUInteger)queueCount qos:(NSQualityOfService)qos;
@@ -43,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-/// Get a serial queue from global queue pool with a specified qos.
+/// Get a serial queue from global queue pool with a specified qos.//specified,精确确定;规定的;额定
 extern dispatch_queue_t YYDispatchQueueGetForQOS(NSQualityOfService qos);
 
 NS_ASSUME_NONNULL_END

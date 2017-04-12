@@ -31,6 +31,7 @@ typedef NS_ENUM(NSUInteger, YYReachabilityWWANStatus) {
 
 /**
  `YYReachability` can used to monitor the network status of an iOS device.
+ //monitor,n. 监视器，监听器，监控器，班长,vt. 监控
  */
 @interface YYReachability : NSObject
 
@@ -39,10 +40,10 @@ typedef NS_ENUM(NSUInteger, YYReachabilityWWANStatus) {
 @property (nonatomic, readonly) YYReachabilityWWANStatus wwanStatus NS_AVAILABLE_IOS(7_0);  ///< Current WWAN status.
 @property (nonatomic, readonly, getter=isReachable) BOOL reachable;                         ///< Current reachable status.
 
-/// Notify block which will be called on main thread when network changed.
+/// Notify block which will be called on main thread when network changed.//Notify,vt. 通告，通知；公布
 @property (nullable, nonatomic, copy) void (^notifyBlock)(YYReachability *reachability);
-
-/// Create an object to check the reachability of the default route.
+//reachability,n.可达性;能达到性;可接近性
+/// Create an object to check the reachability of the default route.//defaulte route,缺省路由
 + (instancetype)reachability;
 
 /// Create an object to check the reachability of the local WI-FI.
@@ -52,7 +53,7 @@ typedef NS_ENUM(NSUInteger, YYReachabilityWWANStatus) {
 + (nullable instancetype)reachabilityWithHostname:(NSString *)hostname;
 
 /// Create an object to check the reachability of a given IP address
-/// @param hostAddress You may pass `struct sockaddr_in` for IPv4 address or `struct sockaddr_in6` for IPv6 address.
+/// @param hostAddress You may pass `struct sockaddr_in` for IPv4 address or `struct sockaddr_in6` for IPv6 address.//pass,通过
 + (nullable instancetype)reachabilityWithAddress:(const struct sockaddr *)hostAddress;
 
 @end
