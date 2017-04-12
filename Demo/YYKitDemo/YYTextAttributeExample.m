@@ -217,7 +217,7 @@
         [text appendAttributedString:one];
     }
     
-    
+    //这个对小于iOS7下的布局没问题
     YYLabel *label = [YYLabel new];
     label.attributedText = text;
     label.width = self.view.width;

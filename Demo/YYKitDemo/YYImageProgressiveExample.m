@@ -53,7 +53,7 @@
     _slider1.minimumValue = 0;
     _slider1.maximumValue = 20;
     _slider1.value = 0;
-    
+    //感觉  iOS7以上的布局和iOS7以下的布局是不是不一样呀
     _imageView.top = (kiOS7Later ? 64 : 0) + 10;
     _seg0.top = _imageView.bottom + (kiOS7Later ? 10 : 0);
     _seg1.top = _seg0.bottom + (kiOS7Later ? 10 : 0);

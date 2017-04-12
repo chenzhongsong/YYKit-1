@@ -82,8 +82,9 @@
     if (kiOS7Later) {
         textView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
     } else {
-        textView.height -= 64;
+        textView.height -= 64;//是不是应该是44 ？
     }
+    //scrollIndicatorInsets应该是UIEdgeInsetsMake(0 + (kiOS7Later ? 64 : 0), 0, 0, 0);
     textView.scrollIndicatorInsets = textView.contentInset;
     textView.selectedRange = NSMakeRange(text.length, 0);
     [self.view addSubview:textView];

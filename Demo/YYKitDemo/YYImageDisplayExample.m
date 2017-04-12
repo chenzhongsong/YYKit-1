@@ -21,13 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithWhite:0.863 alpha:1.000];
-    
+    //_scrollView的frame没有问题
     _scrollView = [UIScrollView new];
     _scrollView.frame = self.view.bounds;
 //    NSLog(@"_scrollView:%@",_scrollView);
     if (kSystemVersion < 7) {
         _scrollView.height -= 44;
     }
+//    else {
+//        _scrollView.height -= 64;
+//    }
     [self.view addSubview:_scrollView];
     
     UILabel *label = [UILabel new];
@@ -41,7 +44,7 @@
     
     [self addImageWithName:@"niconiconi" text:@"Animated GIF"];
     [self addImageWithName:@"wall-e" text:@"Animated WebP"];
-    [self addImageWithName:@"pia" text:@"Animated PNG (APNG)"];
+    [self addImageWithName:@"pia" text:@"Animated PNG (APNG)"];//? png的怎么动画？
     [self addFrameImageWithText:@"Frame Animation"];
     [self addSpriteSheetImageWithText:@"Sprite Sheet Animation"];
     
@@ -65,7 +68,7 @@
     [paths addObject:[basePath stringByAppendingPathComponent:@"d_guzhang@3x.png"]];
     [paths addObject:[basePath stringByAppendingPathComponent:@"d_haha@2x.png"]];
     [paths addObject:[basePath stringByAppendingPathComponent:@"d_haixiu@3x.png"]];
-    
+    //每个持续0.1s换下一个,无限循环
     UIImage *image = [[YYFrameImage alloc] initWithImagePaths:paths oneFrameDuration:0.1 loopCount:0];
     [self addImage:image size:CGSizeZero text:text];
 }
@@ -101,6 +104,7 @@
     YYAnimatedImageView *imageView = [[YYAnimatedImageView alloc] initWithImage:image];
     
     if (size.width > 0 && size.height > 0) imageView.size = size;
+    NSLog(@"imageView.size:%@",NSStringFromCGSize(imageView.size));//图片一倍的尺寸
     imageView.centerX = self.view.width / 2;
     imageView.top = [(UIView *)[_scrollView.subviews lastObject] bottom] + 30;
     [_scrollView addSubview:imageView];

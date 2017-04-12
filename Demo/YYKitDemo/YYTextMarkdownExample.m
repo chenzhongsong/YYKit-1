@@ -38,6 +38,9 @@
     if (kiOS7Later) {
         textView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
     }
+//    else {
+//        textView.height -= 64;//是不是应该是44 ？
+//    }
     textView.backgroundColor = [UIColor colorWithWhite:0.134 alpha:1.000];
     textView.contentInset = UIEdgeInsetsMake((kiOS7Later ? 64 : 0), 0, 0, 0);
     textView.scrollIndicatorInsets = textView.contentInset;

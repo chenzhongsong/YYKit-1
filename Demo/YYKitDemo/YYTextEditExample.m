@@ -52,7 +52,7 @@
     if (kiOS7Later) {
         textView.keyboardDismissMode = UIScrollViewKeyboardDismissModeInteractive;
     } else {
-        textView.height -= 64;
+        textView.height -= 64;//是不是应该是44 ？
     }
     textView.contentInset = UIEdgeInsetsMake(toolbar.bottom, 0, 0, 0);
     textView.scrollIndicatorInsets = textView.contentInset;

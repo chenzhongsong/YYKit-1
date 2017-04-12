@@ -19,7 +19,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
-        self.automaticallyAdjustsScrollViewInsets = NO;
+        self.automaticallyAdjustsScrollViewInsets = NO;//YES or NO 对YYLabel没有影响
     }
     
     
@@ -82,7 +82,7 @@
         [text appendAttributedString:one];
     }
     
-    
+    //这个对小于iOS7下的布局没问题
     YYLabel *label = [YYLabel new];
     label.attributedText = text;
     label.width = self.view.width - 60;

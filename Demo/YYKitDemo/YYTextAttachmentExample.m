@@ -82,7 +82,7 @@
     
     
     text.font = font;
-    
+    //YYLable 在屏幕中间在iOS6上没问题
     _label = [YYLabel new];
     _label.userInteractionEnabled = YES;
     _label.numberOfLines = 0;

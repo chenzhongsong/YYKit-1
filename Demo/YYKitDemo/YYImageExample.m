@@ -25,7 +25,7 @@
     [self addCell:@"Animated Image" class:@"YYImageDisplayExample"];
     [self addCell:@"Progressive Image" class:@"YYImageProgressiveExample"];
     [self addCell:@"Web Image" class:@"YYWebImageExample"];
-    //[self addCell:@"Benchmark" class:@"YYImageBenchmark"];
+    [self addCell:@"Benchmark" class:@"YYImageBenchmark"];
     [self.tableView reloadData];
     self.tableView.tableFooterView = [[UIView alloc] init];//chenzs
 }
