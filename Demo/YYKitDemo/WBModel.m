@@ -264,7 +264,7 @@
              @"nextCursor" : @"next_cursor"};
 }
 + (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"statuses" : [WBStatus class]};
+    return @{@"statuses" : [WBStatus class]};//也可以这样写  @"WBStatus"
 }
 @end
 

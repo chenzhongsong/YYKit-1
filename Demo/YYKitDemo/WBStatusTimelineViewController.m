@@ -28,7 +28,7 @@
 
 - (instancetype)init {
     self = [super init];
-    _tableView = [YYTableView new];
+    _tableView = [YYTableView new];//继承
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _layouts = [NSMutableArray new];
@@ -38,7 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     if ([self respondsToSelector:@selector( setAutomaticallyAdjustsScrollViewInsets:)]) {
-        self.automaticallyAdjustsScrollViewInsets = NO;
+        self.automaticallyAdjustsScrollViewInsets = NO;//ios以上，不让有导航条的时候，视图自动往下压64
     }
     
     UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[WBStatusHelper imageNamed:@"toolbar_compose_highlighted"] style:UIBarButtonItemStylePlain target:self action:@selector(sendStatus)];
@@ -46,10 +46,12 @@
     self.navigationItem.rightBarButtonItem = rightItem;
     
     _tableView.frame = self.view.bounds;
+    NSLog(@"_tableView.frame:%@",_tableView);
     _tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    NSLog(@"_tableView.frame:%@",_tableView);
     _tableView.scrollIndicatorInsets = _tableView.contentInset;
     _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.backgroundView.backgroundColor = [UIColor clearColor];
+    _tableView.backgroundView.backgroundColor = [UIColor clearColor];//没啥作用
     [self.view addSubview:_tableView];
     self.view.backgroundColor = kWBCellBackgroundColor;
     
@@ -60,7 +62,7 @@
     _fpsLabel.alpha = 0;
     [self.view addSubview:_fpsLabel];
     
-    if (kSystemVersion < 7) {
+    if (kSystemVersion < 7) {//说明7以下  还是会往下压
         _fpsLabel.top -= 44;
         _tableView.top -= 64;
         _tableView.height += 20;
@@ -78,7 +80,7 @@
     [self.view addSubview:indicator];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        for (int i = 0; i <= 7; i++) {
+        for (int i = 0; i <= 0; i++) {//原来 i <= 7
             NSData *data = [NSData dataNamed:[NSString stringWithFormat:@"weibo_%d.json",i]];
             WBTimelineItem *item = [WBTimelineItem modelWithJSON:data];
             for (WBStatus *status in item.statuses) {
@@ -89,7 +91,7 @@
         }
         
         // 复制一下，让列表长一些，不至于滑两下就到底了
-        [_layouts addObjectsFromArray:_layouts];
+        //[_layouts addObjectsFromArray:_layouts];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             self.title = [NSString stringWithFormat:@"Weibo (loaded:%d)", (int)_layouts.count];
@@ -97,6 +99,13 @@
             self.navigationController.view.userInteractionEnabled = YES;
             [_tableView reloadData];
         });
+        
+        
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            //说明[indicator removeFromSuperview];没有释放indicator，只是去掉了 节点
+//            [self.view addSubview:indicator];
+//        });
+
     });
 }
 

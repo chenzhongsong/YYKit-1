@@ -634,6 +634,7 @@ static const short base64DecodingTable[256] = {
 
 + (NSData *)dataNamed:(NSString *)name {
     NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@""];
+//    NSLog(@"path:%@",path);
     if (!path) return nil;
     NSData *data = [NSData dataWithContentsOfFile:path];
     return data;

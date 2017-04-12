@@ -51,6 +51,7 @@
 }
 
 - (CGSize)sizeThatFits:(CGSize)size {
+//    return CGSizeMake(100, 20);
     return kSize;
 }
 

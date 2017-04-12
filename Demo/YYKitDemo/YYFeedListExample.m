@@ -69,8 +69,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *className = self.classNames[indexPath.row];
     Class class = NSClassFromString(className);
-    if (class) {
-        UIViewController *ctrl = class.new;
+    if (class) {//多态
+        UIViewController *ctrl = class.new;//会调用init方法
         ctrl.title = _titles[indexPath.row];
         self.title = @" ";
         [self.navigationController pushViewController:ctrl animated:YES];

@@ -268,7 +268,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @discussion If the key in JSON/Dictionary does not match to the model's property name,
  implements this method and returns the additional mapper.
- 
+ implements执行 this method and returns the additional额外的 mapper制图者.//hn add
  Example:
     
     json: 

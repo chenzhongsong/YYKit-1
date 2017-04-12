@@ -303,13 +303,13 @@ typedef NS_ENUM(NSUInteger, WBPictureBadgeType) {
 @property (nonatomic, strong) NSArray *advertises;
 @property (nonatomic, strong) NSString *gsid;
 @property (nonatomic, assign) int32_t interval;
-@property (nonatomic, assign) int32_t uveBlank;
-@property (nonatomic, assign) int32_t hasUnread;
-@property (nonatomic, assign) int32_t totalNumber;
-@property (nonatomic, strong) NSString *sinceID;
-@property (nonatomic, strong) NSString *maxID;
-@property (nonatomic, strong) NSString *previousCursor;
-@property (nonatomic, strong) NSString *nextCursor;
+@property (nonatomic, assign) int32_t uveBlank;//
+@property (nonatomic, assign) int32_t hasUnread;//
+@property (nonatomic, assign) int32_t totalNumber;//
+@property (nonatomic, strong) NSString *sinceID;//
+@property (nonatomic, strong) NSString *maxID;//
+@property (nonatomic, strong) NSString *previousCursor;//
+@property (nonatomic, strong) NSString *nextCursor;//
 @property (nonatomic, strong) NSArray<WBStatus *> *statuses;
 /*
  groupInfo
