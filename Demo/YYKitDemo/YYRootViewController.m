@@ -31,6 +31,64 @@
     //[self log];
 }
 
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+//    [self test_NSDateYYAdd];
+}
+
+/**
+ *  测试  NSDate+YYAdd
+ */
+- (void)test_NSDateYYAdd {
+    
+    NSDate *date                = [[NSDate alloc] init];
+    NSLog(@"date                :%@",date);
+    
+    NSInteger year              = date.year;
+    NSLog(@"year                :%ld",(long)year);
+    NSInteger month             = date.month;
+    NSLog(@"month               :%ld",(long)month);
+    NSInteger day               = date.day;
+    NSLog(@"day                 :%ld",(long)day);
+    NSInteger hour              = date.hour;
+    NSLog(@"hour                :%ld",(long)hour);
+    NSInteger minute            = date.minute;
+    NSLog(@"minute              :%ld",(long)minute);
+    NSInteger second            = date.second;
+    NSLog(@"second              :%ld",(long)second);
+    NSInteger nanosecond        = date.nanosecond;
+    NSLog(@"nanosecond          :%ld",(long)nanosecond);
+    NSInteger weekday           = date.weekday;
+    NSLog(@"weekday             :%ld",(long)weekday);
+    NSInteger weekdayOrdinal    = date.weekdayOrdinal;
+    NSLog(@"weekdayOrdinal      :%ld",(long)weekdayOrdinal);
+    NSInteger weekOfMonth       = date.weekOfMonth;
+    NSLog(@"weekOfMonth         :%ld",(long)weekOfMonth);
+    NSInteger weekOfYear        = date.weekOfYear;
+    NSLog(@"weekOfYear          :%ld",(long)weekOfYear);
+    NSInteger yearForWeekOfYear = date.yearForWeekOfYear;
+    NSLog(@"yearForWeekOfYear   :%ld",(long)yearForWeekOfYear);
+    NSInteger quarter = date.quarter;
+    NSLog(@"quarter             :%ld",(long)quarter);
+    
+    NSLog(@"addYear  :%@",[date dateByAddingYears:1]);
+    NSLog(@"addMonth :%@",[date dateByAddingMonths:1]);
+    NSLog(@"addWeek  :%@",[date dateByAddingWeeks:1]);
+    NSLog(@"addDay   :%@",[date dateByAddingDays:1]);
+    NSLog(@"addHour  :%@",[date dateByAddingHours:1]);
+    NSLog(@"addMinute:%@",[date dateByAddingMinutes:1]);
+    NSLog(@"addSecond:%@",[date dateByAddingSeconds:1]);
+    
+    NSLog(@"format   :%@",[date stringWithFormat:@"yyyy-MM-dd HH:mm:ss"]);
+    NSLog(@"format   :%@",[date stringWithISOFormat]);
+    
+    NSLog(@"date     :%@",[NSDate dateWithString:[date stringWithFormat:@"yyyy-MM-dd HH:mm:ss"] format:@"yyyy-MM-dd HH:mm:ss"]);
+    NSLog(@"date     :%@",[NSDate dateWithISOFormatString:[date stringWithISOFormat]]);
+    
+}
+
 - (void)log {
     printf("all:%.2f MB   used:%.2f MB   free:%.2f MB   active:%.2f MB  inactive:%.2f MB  wird:%.2f MB  purgable:%.2f MB\n",
            [UIDevice currentDevice].memoryTotal / 1024.0 / 1024.0,
