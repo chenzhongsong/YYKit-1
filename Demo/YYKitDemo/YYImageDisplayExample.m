@@ -24,6 +24,7 @@
     
     _scrollView = [UIScrollView new];
     _scrollView.frame = self.view.bounds;
+//    NSLog(@"_scrollView:%@",_scrollView);
     if (kSystemVersion < 7) {
         _scrollView.height -= 44;
     }
@@ -119,7 +120,7 @@
     
     _scrollView.contentSize = CGSizeMake(self.view.width, imageLabel.bottom + 20);
 }
-
+#pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     return YES;
 }
