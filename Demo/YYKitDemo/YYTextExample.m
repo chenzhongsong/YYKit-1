@@ -33,6 +33,7 @@
     [self addCell:@"Ruby Annotation" class:@"YYTextRubyExample"];
     [self addCell:@"Async Display" class:@"YYTextAsyncExample"];
     [self.tableView reloadData];
+    self.tableView.tableFooterView = [[UIView alloc] init];//chenzs
 }
 
 - (void)addCell:(NSString *)title class:(NSString *)className {

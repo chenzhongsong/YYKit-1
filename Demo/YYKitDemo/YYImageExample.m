@@ -27,6 +27,7 @@
     [self addCell:@"Web Image" class:@"YYWebImageExample"];
     //[self addCell:@"Benchmark" class:@"YYImageBenchmark"];
     [self.tableView reloadData];
+    self.tableView.tableFooterView = [[UIView alloc] init];//chenzs
 }
 
 - (void)addCell:(NSString *)title class:(NSString *)className {

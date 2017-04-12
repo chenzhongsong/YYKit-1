@@ -30,6 +30,7 @@
         self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
     }
     [self.tableView reloadData];
+    self.tableView.tableFooterView = [[UIView alloc] init];//chenzs
 }
 
 - (void)addCell:(NSString *)title class:(NSString *)className image:(NSString *)imageName {
